@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "423212445870",
+    "firebase_url": "https://prueba1-fef43.firebaseio.com",
+    "project_id": "prueba1-fef43",
+    "storage_bucket": "prueba1-fef43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423212445870:android:aad44d3d5d96270e37bd3f",
+        "android_client_info": {
+          "package_name": "com.example.mascotas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423212445870-f1svfn67q54u35apogc6nj8i2u9en84v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWOIszuGngxcnde8Ia_-Mqvb3lo_1ffpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423212445870-f1svfn67q54u35apogc6nj8i2u9en84v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423212445870:android:455b6fab5c4ccec037bd3f",
+        "android_client_info": {
+          "package_name": "com.vicente.tutorialfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423212445870-f1svfn67q54u35apogc6nj8i2u9en84v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWOIszuGngxcnde8Ia_-Mqvb3lo_1ffpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423212445870-f1svfn67q54u35apogc6nj8i2u9en84v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
