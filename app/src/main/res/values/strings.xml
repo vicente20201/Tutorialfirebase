@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Tutorialfirebase</string>
+    <string name="app_name">PROMA</string>
     <string name="prefs_file">com.vicente.tutorialfirebase.PREFERENCE_FILE_KEY</string>
 </resources>

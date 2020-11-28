@@ -4,14 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:foregroundTint="#F8F8F8"
     tools:context=".AuthMainActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="550dp"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/promasaa" />
 
     <LinearLayout
         android:id="@+id/authlayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,15 +39,21 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="contraseña"
-            android:inputType="textPassword" />
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +65,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Registrar" />
+                android:backgroundTint="#AC12A9"
+                android:text="Registrar"
+                android:textColor="#FFFFFF" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -55,21 +78,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Acceder" />
+                android:autoText="false"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Acceder"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
         <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="100"
+            android:minHeight="50dp" />
 
         <Button
             android:id="@+id/googlebutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Google" />
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:drawableLeft="@drawable/googleg_standard_color_18"
+            android:paddingLeft="16dp"
+            android:text="    Accede con Google"
+            android:textAlignment="textStart" />
 
     </LinearLayout>
 

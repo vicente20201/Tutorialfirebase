@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -43,9 +44,9 @@ class AuthMainActivity : AppCompatActivity() {
         }
     }
     private fun setup(){
-        title = "Autenticación"
+        title = ""
         signUpButton.setOnClickListener {
-            if (emailEditText.text.isNotBlank() && passwordEditText.text.isNotEmpty()){
+            if (emailEditText.text.isNotBlank() && passwordEditText.text.isNotEmpty()&&passwordEditText.length()>7){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailEditText.text.toString(),
                     passwordEditText.text.toString()).addOnCompleteListener{
                     if(it.isSuccessful){
@@ -53,23 +54,33 @@ class AuthMainActivity : AppCompatActivity() {
 
 
                     }else{
-                        showalert()
+
+                        showalert3()
+                        Toast.makeText(this, "Ya hay un usario registrado con este correo", Toast.LENGTH_LONG).show()
                     }
                 }
+            }else{
+                Toast.makeText(this, "Ingrese un correo válido y una contraseña de almenos 8 digitos", Toast.LENGTH_LONG).show()
             }
         }
         loginButton.setOnClickListener {
-            if (emailEditText.text.isNotBlank() && passwordEditText.text.isNotEmpty()){
+            if (emailEditText.text.isNotBlank() && passwordEditText.text.isNotEmpty()&&passwordEditText.length()>7){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailEditText.text.toString(),
                     passwordEditText.text.toString()).addOnCompleteListener{
                     if(it.isSuccessful){
                         showHome(it.result?.user?.email?:"",ProviderType.Bienvenido)
+                        Toast.makeText(this, "Ingresando", Toast.LENGTH_SHORT).show()
+
 
 
                     }else{
-                        showalert()
+                        showalert2()
+                        Toast.makeText(this, "Correo o contraseña incorrecta", Toast.LENGTH_SHORT).show()
                     }
                 }
+            }else
+            {
+                Toast.makeText(this, "Correo o contraseña incorrecta", Toast.LENGTH_SHORT).show()
             }
         }
         googlebutton.setOnClickListener {
@@ -86,15 +97,31 @@ class AuthMainActivity : AppCompatActivity() {
     private  fun  showalert(){
         val builder=AlertDialog.Builder(this)
         builder.setTitle("ERROR")
-        builder.setMessage("Se ha producido un error")
+        builder.setMessage("Se ha producido un error, verifique que su correo sea valido como 'example@example.com'")
         builder.setPositiveButton("aceptar",null)
         val dialog: AlertDialog=builder.create()
         dialog.show()
     }
     private  fun  showalert1(){
         val builder=AlertDialog.Builder(this)
-        builder.setTitle("ERROR")
-        builder.setMessage("Se ha producido un error de google")
+        builder.setTitle("Error de google")
+        builder.setMessage("Se ha producido un error de google, verifique su conexion")
+        builder.setPositiveButton("aceptar",null)
+        val dialog: AlertDialog=builder.create()
+        dialog.show()
+    }
+    private  fun  showalert2(){
+        val builder=AlertDialog.Builder(this)
+        builder.setTitle("Error de autenticación")
+        builder.setMessage("Esta cuenta no es tuya, o te equivocaste de contraseña, vuelve a intentar")
+        builder.setPositiveButton("aceptar",null)
+        val dialog: AlertDialog=builder.create()
+        dialog.show()
+    }
+    private  fun  showalert3(){
+        val builder=AlertDialog.Builder(this)
+        builder.setTitle("Error de autenticación")
+        builder.setMessage("Ya hay alguien registrado con este correo, intenta con uno nuevo :) ")
         builder.setPositiveButton("aceptar",null)
         val dialog: AlertDialog=builder.create()
         dialog.show()
